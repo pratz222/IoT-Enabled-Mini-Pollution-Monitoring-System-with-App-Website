@@ -18,18 +18,18 @@
 #define DHTTYPE DHT11   // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
 
-#define WIFI_SSID "Holla_tab"
-#define WIFI_PASSWORD "PraiseTheSun2723"
+#define WIFI_SSID "****************"
+#define WIFI_PASSWORD "****************"
 
 /* 2. Define the API Key */
-#define API_KEY "AIzaSyAEcJjMeh4_hTFzWwdyNkY4uAdTvC4EeeQ"
+#define API_KEY "****************"
 
 /* 3. Define the RTDB URL */
-#define DATABASE_URL "environment-monitoring-2efd6-default-rtdb.firebaseio.com"         //<databaseName>.firebaseio.com or <databaseName>.<region>.firebasedatabase.app
+#define DATABASE_URL "****************"        //<databaseName>.firebaseio.com 
 
 /* 4. Define the user Email and password that alreadey registerd or added in your project */
-#define USER_EMAIL "pratyush252003@gmail.com"
-#define USER_PASSWORD "pratyush#64"
+#define USER_EMAIL "****************"
+#define USER_PASSWORD "****************"
 
 //Define Firebase Data object
 FirebaseData fbdo;
@@ -107,7 +107,7 @@ void loop()
   float t = dht.readTemperature();
  
   String q = quality;
-  float g = (gasSensor.getPPM()/250);
+  float g = (gasSensor.getPPM());
     if(g < 50){
       quality = "Fresh Air";
       
@@ -149,7 +149,7 @@ void loop()
     Serial.println();
     String fireComment = String(quality);
 
-    float Pres = (bmp.readPressure()/100); 
+    float Pres = (bmp.readPressure()); 
     String firePres = String(Pres) + String(" hpa") ;  
     Serial.print("Pressure : ");
     Serial.print(firePres);
